@@ -26,11 +26,11 @@ from pyrogram.types import (
 def start_pannel():
     buttons = [
         [
-            InlineKeyboardButton(text="Support​", url=f"https://t.me/{GROUP}"),
-            InlineKeyboardButton(text="Updates", url=f"https://t.me/{CHANNEL}"),
+            InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{GROUP}"),
+            InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/{CHANNEL}"),
         ],
         [
-            InlineKeyboardButton("Command", url="https://telegra.ph/Skyzo-11-10"),
+            InlineKeyboardButton("ᴄᴏᴍᴍᴀɴᴅ", url="https://telegra.ph/Skyzo-11-10"),
         ],
     ]
     return (
@@ -43,16 +43,17 @@ pstart_markup = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                "Add Me To Your Group", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+                "➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ​ ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
         ],
         [
-            InlineKeyboardButton("Support", url=f"https://t.me/{GROUP}"),
-            InlineKeyboardButton("Updates", url=f"https://t.me/{CHANNEL}"),
+            InlineKeyboardButton(text="✨ sᴜᴘᴘᴏʀᴛ​", url=f"https://t.me/{GROUP}"),
+            InlineKeyboardButton("✨ ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/{CHANNEL}"),
         ],
         [
-            InlineKeyboardButton("Cd Music", url="https://telegra.ph/Skyzo-11-10"),
-            InlineKeyboardButton("Cd Dev", url="https://telegra.ph/壊Skyzo-01-21"),
-            InlineKeyboardButton("Cd Stream", url="https://telegra.ph/sᴋʏᴢᴏ-ᴇx-12-21"),
+            InlineKeyboardButton("📚 ᴄᴏᴍᴍᴀɴᴅ ​📚", url="https://telegra.ph/Comands-12-25"),
+        ],
+        [
+            InlineKeyboardButton("🌐 sᴏᴜʀᴄᴇ ᴋᴏᴅᴇ 🌐", url="https://github.com/SkylaIND/SkylaMusic"),
         ],
     ]
 )
@@ -66,11 +67,11 @@ async def welcome(_, message: Message):
         try:
             if member.id in OWNER:
                 return await message.reply_text(
-                    f"🦸🏻‍♂️ **Owners Bot [{member.mention}] Has Joined Your Chats.**"
+                    f"⛑️ **Owners Bot [{member.mention}] Telah bergabung dengan obrolan Anda**"
                 )
             if member.id in SUDOERS:
                 return await message.reply_text(
-                    f"**🉐 Admin Bot [{member.mention}] Just Joined Your Chats.**"
+                    f"**🛸 Admin Bot [{member.mention}] Baru saja bergabung dengan obrolan Anda**"
                 )
             if member.id == ASSID:
                 await remove_active_chat(chat_id)
@@ -78,9 +79,9 @@ async def welcome(_, message: Message):
                 out = start_pannel()
                 await message.reply_text(
                     f"""
-👋 **Hi, Thanks For Adding Me To The Group**
+👋 **Hai, Terima Kasih Telah Menambahkan Saya Ke Grup**
 
-🛵 **Don't Forget To Make Me Admin So Music Can Run Normally**
+😎 **Jangan Lupa Jadikan Saya Admin Agar Musik Bisa Berjalan Normal**
 """,
                     reply_markup=InlineKeyboardMarkup(out[1]),
                     disable_web_page_preview=True
@@ -101,8 +102,8 @@ async def start(_, message: Message):
     out = start_pannel()
     await message.reply_text(
         f"""
-**[🚀]({BOT_IMG}) Thanks For Adding Me To {message.chat.title}.**
-**㊙️ {BOT_NAME} Is Music Player And Video Player Bot**
+**[🚀]({BOT_IMG}) Terima kasih telah menambahkan saya ke {message.chat.title}.**
+**🤖 {BOT_NAME} adalah pemutar musik dan pemutar video bot**
 """,
         reply_markup=InlineKeyboardMarkup(out[1]),
         disable_web_page_preview=True
@@ -119,11 +120,11 @@ async def play(_, message: Message):
         await app.send_message(
             message.chat.id,
             text=f"""
-**[🗣]({BOT_IMG}) Hello {rpk}! Ready Use Me?
+**[🗣]({BOT_IMG}) Hello {rpk}!
 
-🉐 [{BOT_NAME}](tg://user?id=2129034376) Is A Bot That Can Be Used To Listen To Songs In Voice Chat And Can Play Videos In Voice Chat!
+🤖 [{BOT_NAME}](tg://user?id=2129034376) Adalah Bot Yang Dapat Digunakan Untuk Mendengarkan Lagu Di Obrolan Suara Dan Dapat Memutar Video Di Obrolan Suara!
 
-🧰 To Find Out All The Available Command Bots, You Can Press The Two Buttons Below, Namely Cd Music, Cd Dev And Cd Stream**
+🧰 Untuk mengetahui semua perintah bot klik command**
 
 """,
             parse_mode="markdown",
@@ -147,7 +148,7 @@ async def play(_, message: Message):
 
 ❇️ **Title:** {x["title"]}
 
-⏳ **Duration:** {round(x["duration"] / 60)} Mins
+⌚ **Duration:** {round(x["duration"] / 60)} Mins
 👀 **Views:** `{x["view_count"]}`
 👍 **Like:** `{x["like_count"]}`
 👎 **Dislike:** `{x["dislike_count"]}`
@@ -169,7 +170,7 @@ async def play(_, message: Message):
             )
         if str(finxx) == "sud":
             sudoers = await get_sudoers()
-            text = "**💻 SUDO USERS FLICKS BOT**\n\n"
+            text = "**💻 SUDO USERS SKYLA BOT**\n\n"
             for count, user_id in enumerate(sudoers, 1):
                 try:
                     user = await app.get_users(user_id)
