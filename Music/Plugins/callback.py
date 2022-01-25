@@ -121,7 +121,7 @@ async def pausevc(_,CallbackQuery):
             user_id = CallbackQuery.from_user.id
             user_name = CallbackQuery.from_user.first_name
             rpk = "["+user_name+"](tg://user?id="+str(user_id)+")"
-            await CallbackQuery.message.reply(f"**🎧 Voicechat Paused By User {rpk}!**", reply_markup=play_keyboard)
+            await CallbackQuery.message.reply(f"**🎧 Obrolan Suara dijeda oleh {rpk}!**", reply_markup=play_keyboard)
             await CallbackQuery.message.delete()
         else:
             await CallbackQuery.answer(f"Nothing's playing on Music!", show_alert=True)
@@ -148,7 +148,7 @@ async def resumevc(_,CallbackQuery):
             user_id = CallbackQuery.from_user.id
             user_name = CallbackQuery.from_user.first_name
             rpk = "["+user_name+"](tg://user?id="+str(user_id)+")"
-            await CallbackQuery.message.reply(f"**🎧 Voicechat Resumed By User {rpk}!**", reply_markup=play_keyboard)
+            await CallbackQuery.message.reply(f"**🎧 Obrolan suara dilanjutkan oleh {rpk}!**", reply_markup=play_keyboard)
             await CallbackQuery.message.delete()
     else:
         await CallbackQuery.answer(f"Nothing's playing on Music!", show_alert=True)
@@ -171,7 +171,7 @@ async def skipvc(_,CallbackQuery):
             rpk = "["+user_name+"](tg://user?id="+str(user_id)+")"
             await remove_active_chat(chat_id)
             await CallbackQuery.answer()
-            await CallbackQuery.message.reply(f"**⛔️ Skip Button Used By {rpk}**\n\n**🤦‍♂ No More Music In** __Queues__ \n\n**📨 Leaving Voice Chat Now..**")
+            await CallbackQuery.message.reply(f"**⛔️ Skip Button Used By {rpk}**\n\n**🤦‍♂ No More Music In** __Queues__ \n\n**📨 Keluar dari obrolan suara sekarang..**")
             await music.pytgcalls.leave_group_call(chat_id)
             return
         else:
@@ -256,7 +256,7 @@ async def skipvc(_,CallbackQuery):
                 await CallbackQuery.message.reply_photo(
                 photo= thumb,
                 reply_markup=InlineKeyboardMarkup(buttons),    
-                caption=(f"<b>__Skipped Voice Chat By {rpk}__</b>\n\n🎥<b>__Started Playing:__ </b>[{title[:25]}]({url}) \n⏳<b>__Duration:__</b> {duration} Mins\n👤**__Requested by:__** {semx.mention}")
+                caption=(f"<b>__Skipped Voice Chat By {rpk}__</b>\n\n🎥<b>__Started Playing:__ </b>[{title[:25]}]({url}) \n⌚<b>__Duration:__</b> {duration} Mins\n👤**__Requested by:__** {semx.mention}")
             )   
                 os.remove(thumb)
             else:      
@@ -289,7 +289,7 @@ async def skipvc(_,CallbackQuery):
                 await CallbackQuery.message.reply_photo(
                 photo=f"downloads/{_chat_}final.png",
                 reply_markup=InlineKeyboardMarkup(buttons),
-                caption=f"<b>__Skipped Voice Chat By {rpk}__</b>\n\n🎥<b>__Started Playing:__</b> {title} \n⏳<b>__Duration:__</b> {duration} \n👤<b>__Requested by:__ </b> {username}",
+                caption=f"<b>__Skipped Voice Chat By {rpk}__</b>\n\n🎥<b>__Started Playing:__</b> {title} \n⌚<b>__Duration:__</b> {duration} \n👤<b>__Requested by:__ </b> {username}",
                 )
                 return
             
@@ -443,7 +443,7 @@ Personal Playlist Playing."""
                     m = await CallbackQuery.message.reply_photo(
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),    
-                    caption=(f"🎥<b>__Playing:__ </b>[{title[:25]}]({url}) \n⏳<b>__Duration:__</b> {duration} \n💡<b>__Info:__</b> [Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n👤**__Requested by:__** {checking}")
+                    caption=(f"🎥<b>__Playing:__ </b>[{title[:25]}]({url}) \n⌚<b>__Duration:__</b> {duration} \n💡<b>__Info:__</b> [Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n👤**__Requested by:__** {checking}")
                 )   
                     os.remove(thumb)
                     await CallbackQuery.message.delete()
@@ -565,7 +565,7 @@ Group Playlist Playing."""
                             except Exception as e:
                                 taken = "00:00"
                             size = d['_total_bytes_str']
-                            mystic.edit(f"**📥 Downloaded {title[:50]}.....**\n\n**📚 FileSize:** {size}\n**⚡ Time Taken:** {taken} sec\n\n**📑 Converting Flicks File**")
+                            mystic.edit(f"**📥 Downloaded {title[:50]}.....**\n\n**📚 FileSize:** {size}\n**⚡ Time Taken:** {taken} sec\n\n**📑 Converting Skyla File**")
                             print(f"[{videoid}] Downloaded| Elapsed: {taken} seconds")  
                     loop = asyncio.get_event_loop()
                     xx = await loop.run_in_executor(None, download, url, my_hook)
@@ -589,7 +589,7 @@ Group Playlist Playing."""
                     m = await CallbackQuery.message.reply_photo(
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),    
-                    caption=(f"🎥<b>__Playing:__ </b>[{title[:25]}]({url}) \n⏳<b>__Duration:__</b> {duration} \n⚡<b>__Info:__</b> [Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n👤**__Requested by:__** {checking}")
+                    caption=(f"🎥<b>__Playing:__ </b>[{title[:25]}]({url}) \n⌚<b>__Duration:__</b> {duration} \n⚡<b>__Info:__</b> [Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n👤**__Requested by:__** {checking}")
                 )   
                     os.remove(thumb)
                     await CallbackQuery.message.delete()
