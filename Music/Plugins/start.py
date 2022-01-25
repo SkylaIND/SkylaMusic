@@ -26,11 +26,11 @@ from pyrogram.types import (
 def start_pannel():
     buttons = [
         [
-            InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{GROUP}"),
-            InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/{CHANNEL}"),
+            InlineKeyboardButton(text="✨ sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{GROUP}"),
+            InlineKeyboardButton(text="✨ ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/{CHANNEL}"),
         ],
         [
-            InlineKeyboardButton("ᴄᴏᴍᴍᴀɴᴅ", url="https://telegra.ph/Skyzo-11-10"),
+            InlineKeyboardButton("📚 ᴄᴏᴍᴍᴀɴᴅ 📚", url="https://telegra.ph/SKYLA-ROBOT-COMMANDS-01-25"),
         ],
     ]
     return (
@@ -50,7 +50,7 @@ pstart_markup = InlineKeyboardMarkup(
             InlineKeyboardButton("✨ ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/{CHANNEL}"),
         ],
         [
-            InlineKeyboardButton("📚 ᴄᴏᴍᴍᴀɴᴅ ​📚", url="https://telegra.ph/Comands-12-25"),
+            InlineKeyboardButton("📚 ᴄᴏᴍᴍᴀɴᴅ ​📚", url="https://telegra.ph/SKYLA-ROBOT-COMMANDS-01-25"),
         ],
         [
             InlineKeyboardButton("🌐 sᴏᴜʀᴄᴇ ᴋᴏᴅᴇ 🌐", url="https://github.com/SkylaIND/SkylaMusic"),
