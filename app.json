@@ -1,8 +1,8 @@
 {
-    "name": "Skyzo Music",
+    "name": "Skyla Music",
     "description": "Music allow you to stream music trought the telegram voice chat feature.",
     "keywords": ["music", "voice chat", "telegram"],
-    "repository": "https://github.com/ridho17-ind/SkyzoMusicBot",
+    "repository": "https://github.com/SkylaIND/SkylaMusic",
     "stack": "container",
     "env": {
         "SESSION_NAME": {
@@ -71,7 +71,7 @@
         },
         "UPSTREAM_REPO": {
             "description": "If you dont know this, Leave as it is",
-            "value": "https://github.com/ridho17-ind/SkyzoMusicBot",
+            "value": "https://github.com/SkylaIND/SkylaMusic",
             "required": true
         },
         "UPSTREAM_BRANCH": {
@@ -82,12 +82,12 @@
         "CHANNEL": {
             "description": "Fill in using your channel username without @",
             "required": true,
-            "value": "SadRoomsInfo"
+            "value": "skylaprojects"
         },
         "GROUP": {
             "description": "Fill in using your channel username without the @",
             "required": true,
-            "value": "FlicksRobotSupport"
+            "value": "skylasupport"
         }
     },
     "buildpacks": [
