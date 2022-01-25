@@ -31,7 +31,7 @@
    Stay Up-To-Date
 </h2>
 
-<p align="center"><img src="https://media.giphy.com/media/SWoSkN6DxTszqIKEqv/giphy.gif" alt="Coder GIF" width="500" alt="ridho17-ind Github" width="1000px" /></p>
+<p align="center"><img src="https://telegra.ph/file/10d9b9d65afaf1c80fa7c.jpg" alt="Coder GIF" width="500" alt="ridho17-ind Github" width="1000px" /></p>
 
 
 
