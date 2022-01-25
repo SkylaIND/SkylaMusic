@@ -40,9 +40,9 @@ async def cbmenu(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("▶️", callback_data="cbstop"),
-                    InlineKeyboardButton("⏸️", callback_data="cbpause"),
-                    InlineKeyboardButton("▶️", callback_data="cbresume"),
+                    InlineKeyboardButton("▢", callback_data="cbstop"),
+                    InlineKeyboardButton("II", callback_data="cbpause"),
+                    InlineKeyboardButton("▷", callback_data="cbresume"),
                 ],
                 [
                     InlineKeyboardButton("🔇", callback_data="cbmute"),
