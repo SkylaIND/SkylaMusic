@@ -242,7 +242,7 @@ async def play(_, message: Message):
                 except Exception as e:
                     taken = "00:00"
                 size = d['_total_bytes_str']
-                mystic.edit(f"**❤️‍🔥 Downloaded {title[:50]}.....**\n\n**📚 FileSize:** {size}\n**⚡ Time Taken:** {taken} sec\n\n**📑 Converting Music File**")
+                mystic.edit(f"**📥 Downloaded {title[:50]}.....**\n\n**📚 FileSize:** {size}\n**⚡ Time Taken:** {taken} sec\n\n**📑 Converting Music File**")
                 print(f"[{videoid}] Downloaded| Elapsed: {taken} seconds")  
         loop = asyncio.get_event_loop()
         x = await loop.run_in_executor(None, download, link, my_hook)
@@ -289,7 +289,7 @@ async def play(_, message: Message):
         buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
         hmo = await message.reply_photo(
             photo=thumb, 
-            caption=(f"1️⃣<b>{title1[:25]}</b>\n┣ ❤️‍🔥 __Powered By {BOT_NAME}__\n┗ 🧰 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n2️⃣<b>{title2[:25]}</b>\n┣ ❤️‍🔥 __Powered By {BOT_NAME}__\n┗ 🧰 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n3️⃣<b>{title3[:25]}</b>\n┣ ❤️‍🔥 __Powered By {BOT_NAME}__\n┗ 🧰 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n4️⃣<b>{title4[:25]}</b>\n┣ ❤️‍🔥 __Powered By {BOT_NAME}__\n┗ 🧰 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n5️⃣<b>{title5[:25]}</b>\n┣ ❤️‍🔥 __Powered {BOT_NAME}__\n┗ 🧰 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>"),    
+            caption=(f"1️⃣<b>{title1[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n2️⃣<b>{title2[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n3️⃣<b>{title3[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n4️⃣<b>{title4[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n5️⃣<b>{title5[:25]}</b>\n┣ ⚡ __Powered {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>"),    
             reply_markup=InlineKeyboardMarkup(buttons),
         )  
         disable_web_page_preview=True
@@ -321,7 +321,7 @@ async def play(_, message: Message):
         checking = f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
         await message.reply_photo(
             photo=thumb,
-            caption=(f"💡 **Track Added To Queue »** `{position}`\n\n🏷️<b> **Title:** </b>[{title[:25]}]({url}) \n⏳🕰️<b> **Duration:** </b> {duration} \n🎧<b> **Requested By:** </b>{checking}"),
+            caption=(f"💡 **Track Added To Queue »** `{position}`\n\n🏷️<b> **Title:** </b>[{title[:25]}]({url}) \n⌚<b> **Duration:** </b> {duration} \n🎧<b> **Requested By:** </b>{checking}"),
             reply_markup=InlineKeyboardMarkup(buttons)
         )
         return await mystic.delete()     
@@ -352,7 +352,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo=thumb,
         reply_markup=InlineKeyboardMarkup(buttons),    
-        caption=(f"🏷️<b> **Title:** </b>[{title[:25]}]({url}) \n🕰️<b> **Duration:** </b> {duration} \n🎧<b> **Requested by:** </b>{checking}")
+        caption=(f"🏷️<b> **Title:** </b>[{title[:25]}]({url}) \n⌚<b> **Duration:** </b> {duration} \n🎧<b> **Requested by:** </b>{checking}")
     )   
         return await mystic.delete()
          
@@ -469,7 +469,7 @@ async def startyuplay(_,CallbackQuery):
         await mystic.delete()
         m = await CallbackQuery.message.reply_photo(
         photo=thumb,
-        caption=(f"💡 **Track added to queue »** `{position}`\n\n🏷️<b> **Title:** </b>[{title[:25]}]({url}) \n🕰️<b> **Duration:** </b> {duration} \n🎧<b> **Requested by:** </b>{checking}"),
+        caption=(f"💡 **Track added to queue »** `{position}`\n\n🏷️<b> **Title:** </b>[{title[:25]}]({url}) \n⌚<b> **Duration:** </b> {duration} \n🎧<b> **Requested by:** </b>{checking}"),
         reply_markup=InlineKeyboardMarkup(buttons)
     )
         os.remove(thumb)
@@ -491,7 +491,7 @@ async def startyuplay(_,CallbackQuery):
         m = await CallbackQuery.message.reply_photo(
         photo=thumb,
         reply_markup=InlineKeyboardMarkup(buttons),    
-        caption=(f"🏷️<b> **Title:** </b>[{title[:25]}]({url}) \n🕰️<b> **Duration:** </b> {duration} \n🎧<b> **Requested by:** </b>{checking}")
+        caption=(f"🏷️<b> **Title:** </b>[{title[:25]}]({url}) \n⌚<b> **Duration:** </b> {duration} \n🎧<b> **Requested by:** </b>{checking}")
     )   
         os.remove(thumb)
         await CallbackQuery.message.delete()
@@ -551,7 +551,7 @@ async def popat(_,CallbackQuery):
     if i == 1:
         buttons = search_markup2(ID6, ID7, ID8, ID9, ID10, duration6, duration7, duration8, duration9, duration10 ,user_id, query)
         await CallbackQuery.edit_message_text(
-            f"6️⃣<b>{title6[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💎 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID6})__</u>\n\n7️⃣<b>{title7[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💎 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID7})__</u>\n\n8️⃣<b>{title8[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💎 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID8})__</u>\n\n9️⃣<b>{title9[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💎 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID9})__</u>\n\n🔟<b>{title10[:25]}</b>\n┣ ⚡ Powered By {BOT_NAME}__\n┗ 💎 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID10})__</u>",    
+            f"6️⃣<b>{title6[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID6})__</u>\n\n7️⃣<b>{title7[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID7})__</u>\n\n8️⃣<b>{title8[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID8})__</u>\n\n9️⃣<b>{title9[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID9})__</u>\n\n🔟<b>{title10[:25]}</b>\n┣ ⚡ Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID10})__</u>",    
             reply_markup=InlineKeyboardMarkup(buttons),
         )  
         disable_web_page_preview=True
@@ -559,7 +559,7 @@ async def popat(_,CallbackQuery):
     if i == 2:
         buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
         await CallbackQuery.edit_message_text(
-            f"1️⃣<b>{title1[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💎 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n2️⃣<b>{title2[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💎 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n3️⃣<b>{title3[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💎 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n4️⃣<b>{title4[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💎 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n5️⃣<b>{title5[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💎 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>",    
+            f"1️⃣<b>{title1[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n2️⃣<b>{title2[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n3️⃣<b>{title3[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n4️⃣<b>{title4[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n5️⃣<b>{title5[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>",    
             reply_markup=InlineKeyboardMarkup(buttons),
         )  
         disable_web_page_preview=True
