@@ -97,7 +97,7 @@ async def closesmex(_,CallbackQuery):
     try:
         smex, user_id = callback_request.split("|") 
     except Exception as e:
-        await CallbackQuery.message.edit(f"Error Occured\n**Possible reason could be**:{e}")
+        await CallbackQuery.message.edit(f"Terjadi Kesalahan\n**Karena Alasan**:{e}")
         return 
     if CallbackQuery.from_user.id != int(user_id):
         await CallbackQuery.answer("ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴄʟᴏsᴇ ᴛʜɪs ᴍᴇɴᴜ​", show_alert=True)
@@ -110,7 +110,7 @@ async def closesmex(_,CallbackQuery):
 async def pausevc(_,CallbackQuery):
     a = await app.get_chat_member(CallbackQuery.message.chat.id , CallbackQuery.from_user.id)
     if not a.can_manage_voice_chats:
-        return await CallbackQuery.answer("Anda tidak memiliki izin yang diperlukan untuk melakukan tindakan ini.\nPermission: KELOLA OBROLAN SUARA", show_alert=True)
+        return await CallbackQuery.answer("Anda tidak memiliki izin yang diperlukan untuk melakukan tindakan ini.\nIzin: KELOLA OBROLAN SUARA", show_alert=True)
     checking = CallbackQuery.from_user.first_name
     chat_id = CallbackQuery.message.chat.id
     if await is_active_chat(chat_id):
@@ -134,12 +134,12 @@ async def pausevc(_,CallbackQuery):
 async def resumevc(_,CallbackQuery):  
     a = await app.get_chat_member(CallbackQuery.message.chat.id , CallbackQuery.from_user.id)
     if not a.can_manage_voice_chats:
-        return await CallbackQuery.answer("You don't have the required permission to perform this action.\nPermission: MANAGE VOICE CHATS", show_alert=True)
+        return await CallbackQuery.answer("Anda tidak memiliki izin yang diperlukan untuk melakukan tindakan ini.\nIzin: KELOLA OBROLAN SUARA", show_alert=True)
     checking = CallbackQuery.from_user.first_name
     chat_id = CallbackQuery.message.chat.id
     if await is_active_chat(chat_id):
         if await is_music_playing(chat_id):
-            await CallbackQuery.answer("I dont think if something's paused on voice chat", show_alert=True)
+            await CallbackQuery.answer("Saya tidak berpikir jika ada sesuatu yang dijeda di obrolan suara", show_alert=True)
             return    
         else:
             await music_on(chat_id)
@@ -158,7 +158,7 @@ async def resumevc(_,CallbackQuery):
 async def skipvc(_,CallbackQuery): 
     a = await app.get_chat_member(CallbackQuery.message.chat.id , CallbackQuery.from_user.id)
     if not a.can_manage_voice_chats:
-        return await CallbackQuery.answer("Anda tidak memiliki izin yang diperlukan untuk melakukan tindakan ini.\nPermission: KELOLA OBROLAN SUARA", show_alert=True)
+        return await CallbackQuery.answer("Anda tidak memiliki izin yang diperlukan untuk melakukan tindakan ini.\nIzin: KELOLA OBROLAN SUARA", show_alert=True)
     checking = CallbackQuery.from_user.first_name
     chat_id = CallbackQuery.message.chat.id
     chat_title = CallbackQuery.message.chat.title
@@ -299,7 +299,7 @@ async def skipvc(_,CallbackQuery):
 async def stopvc(_,CallbackQuery):
     a = await app.get_chat_member(CallbackQuery.message.chat.id , CallbackQuery.from_user.id)
     if not a.can_manage_voice_chats:
-        return await CallbackQuery.answer("You don't have the required permission to perform this action.\nPermission: MANAGE VOICE CHATS", show_alert=True)
+        return await CallbackQuery.answer("Anda tidak memiliki izin yang diperlukan untuk melakukan tindakan ini.\nIzin: KELOLA OBROLAN SUARA", show_alert=True)
     checking = CallbackQuery.from_user.first_name
     chat_id = CallbackQuery.message.chat.id
     if await is_active_chat(chat_id):
@@ -331,7 +331,7 @@ async def play_playlist(_,CallbackQuery):
         user_id,smex = callback_request.split("|") 
     except Exception as e:
         await CallbackQuery.answer()
-        return await CallbackQuery.message.edit(f"Error Occured\n**Possible reason could be**:{e}")
+        return await CallbackQuery.message.edit(f"Error Occured\n**Karena Alasan**:{e}")
     Name = CallbackQuery.from_user.first_name
     chat_title = CallbackQuery.message.chat.title
     if str(smex) == "personal":
@@ -339,7 +339,7 @@ async def play_playlist(_,CallbackQuery):
             return await CallbackQuery.answer("This Is Not Forr You! Play Your Own Playlist Stupid!", show_alert=True)
         _playlist = await get_note_names(userid)
         if not _playlist:
-            return await CallbackQuery.answer(f"You Have No Playlist On Servers.", show_alert=True)
+            return await CallbackQuery.answer(f"Anda Tidak Memiliki Daftar Putar Di Server.", show_alert=True)
         else:
             await CallbackQuery.message.delete()
             logger_text=f"""Starting Playlist
@@ -372,7 +372,7 @@ Personal Playlist Playing."""
                         with yt_dlp.YoutubeDL(ytdl_opts) as ytdl:
                             x = ytdl.extract_info(url, download=False)
                     except Exception as e:
-                        return await mystic.edit(f"Failed to download this video.\n\n**Reason**:{e}") 
+                        return await mystic.edit(f"Gagal mengunduh video ini.\n\n**Karena**:{e}") 
                     title = (x["title"])
                     thumbnail = (x["thumbnail"])
                     def my_hook(d): 
@@ -485,7 +485,7 @@ Personal Playlist Playing."""
     if str(smex) == "group":
         _playlist = await get_note_names(CallbackQuery.message.chat.id)
         if not _playlist:
-            return await CallbackQuery.answer(f"Your Group Has No Playlist On Servers. Try Adding Musics In Playlist.", show_alert=True)
+            return await CallbackQuery.answer(f"Grup Anda Tidak Memiliki Daftar Putar Di Server. Coba Tambahkan Musik Di Daftar Putar.", show_alert=True)
         else:
             await CallbackQuery.message.delete()
             logger_text=f"""Starting Playlist
@@ -518,7 +518,7 @@ Group Playlist Playing."""
                         with yt_dlp.YoutubeDL(ytdl_opts) as ytdl:
                             x = ytdl.extract_info(url, download=False)
                     except Exception as e:
-                        return await mystic.edit(f"Gagal mengunduh video ini.\n\n**Reason**:{e}") 
+                        return await mystic.edit(f"Gagal mengunduh video ini.\n\n**Karena**:{e}") 
                     title = (x["title"])
                     thumbnail = (x["thumbnail"])
                     def my_hook(d): 
@@ -635,7 +635,7 @@ async def group_playlist(_,CallbackQuery):
     await CallbackQuery.answer()
     a = await app.get_chat_member(CallbackQuery.message.chat.id , CallbackQuery.from_user.id)
     if not a.can_manage_voice_chats:
-        return await CallbackQuery.answer("You don't have the required permission to perform this action.\nPermission: MANAGE VOICE CHATS", show_alert=True)
+        return await CallbackQuery.answer("Anda tidak memiliki izin yang diperlukan untuk melakukan tindakan ini.\nIzin: KELOLA OBROLAN SUARA", show_alert=True)
     callback_data = CallbackQuery.data.strip()
     chat_id = CallbackQuery.message.chat.id
     callback_request = callback_data.split(None, 1)[1]
@@ -643,12 +643,12 @@ async def group_playlist(_,CallbackQuery):
     try:
         url,smex= callback_request.split("|") 
     except Exception as e:
-        return await CallbackQuery.message.edit(f"Error Occured\n**Possible reason could be**: {e}")
+        return await CallbackQuery.message.edit(f"Terjadi Kesalahan\n**Karena Alasan**: {e}")
     Name = CallbackQuery.from_user.first_name
     _count = await get_note_names(chat_id)
     count = 0
     if not _count:
-        sex = await CallbackQuery.message.reply_text("Welcome To Music's Playlist Feature.\n\nGenerating Your Group's Playlist In Database...Please wait.")
+        sex = await CallbackQuery.message.reply_text("Selamat Datang Di Fitur Daftar Putar Musik.\n\nMembuat Daftar Putar Grup Anda Di Database...Harap tunggu.")
         await asyncio.sleep(2)
         await sex.delete()
     else:
@@ -656,7 +656,7 @@ async def group_playlist(_,CallbackQuery):
             count += 1   
     count = int(count)
     if count == 30:
-        return await CallbackQuery.message.reply_text("Sorry! You can only have 30 music in group playlist.")
+        return await CallbackQuery.message.reply_text("Maaf! Anda hanya dapat memiliki 30 musik di daftar putar grup.")
     try:
         url = (f"https://www.youtube.com/watch?v={url}")
         results = VideosSearch(url, limit=1)
@@ -665,11 +665,11 @@ async def group_playlist(_,CallbackQuery):
             duration = (result["duration"])
             videoid = (result["id"])
     except Exception as e:
-            return await CallbackQuery.message.reply_text(f"Some Error Occured.\n**Possible Reason:** {e}") 
+            return await CallbackQuery.message.reply_text(f"Terjadi Kesalahan.\n**Karena Alasan:** {e}") 
     _check = await get_playlist(chat_id, videoid)
     title = title[:50]
     if _check:
-         return await CallbackQuery.message.reply_text(f"{Name}, Its already in the Playlist!")   
+         return await CallbackQuery.message.reply_text(f"{Name}, Sudah ada di Daftar Putar!")   
     assis = {
         "videoid": videoid,
         "title": title,
@@ -677,7 +677,7 @@ async def group_playlist(_,CallbackQuery):
     }
     await save_playlist(chat_id, videoid, assis)
     Name = CallbackQuery.from_user.first_name
-    return await CallbackQuery.message.reply_text(f"Added to Group's Playlist by {Name}")
+    return await CallbackQuery.message.reply_text(f"Ditambahkan ke Daftar Putar Grup oleh {Name}")
   
 
 @Client.on_callback_query(filters.regex("playlist"))
@@ -690,12 +690,12 @@ async def pla_playylistt(_,CallbackQuery):
     try:
         url,smex= callback_request.split("|") 
     except Exception as e:
-        return await CallbackQuery.message.edit(f"Error Occured\n**Possible reason could be**:{e}")
+        return await CallbackQuery.message.edit(f"Terjadi Kesalahan\n**Karena Alasan**:{e}")
     Name = CallbackQuery.from_user.first_name
     _count = await get_note_names(userid)
     count = 0
     if not _count:
-        sex = await CallbackQuery.message.reply_text("**Welcome To Music's Playlist Feature.**\n\n**Generating Your Playlist In Database...Please wait.**")
+        sex = await CallbackQuery.message.reply_text("**Selamat Datang Di Fitur Daftar Putar Musik.\n\nMembuat Daftar Putar Grup Anda Di Database...Harap tunggu.**")
         await asyncio.sleep(2)
         await sex.delete()
     else:
@@ -842,7 +842,7 @@ async def G_list(_,CallbackQuery):
 async def cbgroupdel(_,CallbackQuery):  
     a = await app.get_chat_member(CallbackQuery.message.chat.id , CallbackQuery.from_user.id)
     if not a.can_manage_voice_chats:
-        return await CallbackQuery.answer("Anda tidak memiliki izin yang diperlukan untuk melakukan tindakan ini.\nPermission: MANAGE VOICE CHATS", show_alert=True)
+        return await CallbackQuery.answer("Anda tidak memiliki izin yang diperlukan untuk melakukan tindakan ini.\nIzin: MANAGE VOICE CHATS", show_alert=True)
     await CallbackQuery.message.delete() 
     await CallbackQuery.answer()
     _playlist = await get_note_names(CallbackQuery.message.chat.id)                                    
