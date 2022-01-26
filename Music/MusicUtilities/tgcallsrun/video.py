@@ -24,7 +24,7 @@ from Music.MusicUtilities.tgcallsrun.queues import (
 keyboard = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("ᴅᴏɴᴀsɪ", url=f"https://t.me/{GROUP}"),
+            InlineKeyboardButton("ᴅᴏɴᴀsɪ", url=f"https://t.me/Zxyune"),
             InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{CHANNEL}"),
         ]
     ]
