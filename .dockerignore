@@ -1,8 +1,6 @@
+LICENSE
+README.md
 .env
-*.log
-.git/
-.idea/
-downloads/
-raw_files/
 .gitignore
+.git/
 __pycache__/
