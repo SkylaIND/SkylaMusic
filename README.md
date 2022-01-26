@@ -1,13 +1,9 @@
 <h1 align= center><b>SKYLA MUSIC BOT</b></h1>
 <h3 align = center> Telegram Music Bot And Stream Feature New Version </h3>
+<p align = "center"><a herf = "https://t.me/SkylaMusicBot" alt = "SkylaMusic"><img src = "https://telegra.ph/file/eea87ebad56cced04ab2c.jpg" width = "900"></a></p>
 
 
-
-
-<h2 align="center">
-   Config Vars
-</h2>
-
+# Config Vars
 1. `API_ID` : Assistant Account Telegram API_ID, get it from my.telegram.org
 2. `API_HASH` : Assistant Account Telegram API_HASH, get it from my.telegram.org
 3. `ASS_ID` : Assistant Id Account
