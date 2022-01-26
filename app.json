@@ -16,7 +16,7 @@
         },
         "BOT_IMG": {
             "description": "Photo for your bot",
-            "value": "https://telegra.ph/file/d3f62131358c475dda9ae.jpg",
+            "value": "https://telegra.ph/file/c3caf20668b79a2f2dcca.jpg",
             "required": true
         },
         "ASS_ID": {
@@ -82,7 +82,7 @@
         "CHANNEL": {
             "description": "Fill in using your channel username without @",
             "required": true,
-            "value": "skylaprojects"
+            "value": "SkylaIND"
         },
         "GROUP": {
             "description": "Fill in using your channel username without the @",
