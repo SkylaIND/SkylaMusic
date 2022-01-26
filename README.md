@@ -1,6 +1,6 @@
 <h1 align= center><b>SKYLA MUSIC BOT</b></h1>
 <h3 align = center> Telegram Music Bot And Stream Feature New Version </h3>
-<p align = "center"><a herf = "https://t.me/SkylaMusicBot" alt = "SkylaMusic"><img src = "https://telegra.ph/file/a06a2451bd652d4e1e8cb.jpg" width = "900"></a></p>
+<p align = "center"><a herf = "https://t.me/SkylaMusicBot" alt = "SkylaMusic"><img src = "https://telegra.ph/file/787e478821c3ec573ecb3.jpg" width = "900"></a></p>
 
 
 # Config Vars
