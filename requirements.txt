@@ -30,3 +30,4 @@ uvloop
 telegraph
 lyricsgenius
 hachoir
+heroku3
