@@ -49,7 +49,7 @@
 
 
 
-**[Kenkan Gay](https://github.com/kenkansaja) | [Skyzo Ganteng](https://github.com/ridho17-ind) | [Fariz Gay](https://github.com/fjgaming212)**
+**[SkyNot](https://github.com/Cangcimenn) | [Kenkan](https://github.com/kenkansaja) | [Skyzo](https://github.com/ridho17-ind) | [Fariz](https://github.com/fjgaming212)**
 
 
 
