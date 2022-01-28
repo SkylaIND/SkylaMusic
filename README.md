@@ -42,17 +42,6 @@
  </p> 
 
 
-
-<h2 align="center">
-   CONTRIBUTORS
-</h2>
-
-
-
-**[Kenkan](https://github.com/kenkansaja) | [Skyzo](https://github.com/ridho17-ind) | [Fariz](https://github.com/fjgaming212) | [Skyla](https://github.com/SkylaIND)**
-
-
-
 <h2 align="center">
    CREDIT
 </h2>
@@ -60,3 +49,11 @@
 
 
 **[The Yukki Music](https://github.com/NotReallyShikhar/YukkiMusicBot) | [Not Realy Shikhar](https://github.com/NotReallyShikhar)**
+
+
+##CONTRIBUTOR
+**[Kenkan](https://github.com/kenkansaja)
+**[Skyzo](https://github.com/ridho17-ind)
+**[Fariz](https://github.com/fjgaming212)
+[Skyla](https://github.com/SkylaIND)**
+
