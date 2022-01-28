@@ -47,7 +47,9 @@
 - PyTgCalls
 
 #### Contributors
-- [Kenkan](https://github.com/kenkansaja)
-- [Skyzo](https://github.com/ridho17-ind)
-- [Fariz](https://github.com/fjgaming212)
-- [Skyla](https://github.com/SkylaIND)
+- [Kenkan](https://github.com/kenkansaja): Dev Musikku
+- [Skyzo](https://github.com/ridho17-ind): Devs Flicks
+- [Fariz](https://github.com/fjgaming212): Devs Xmusic
+- [Skyla](https://github.com/SkylaIND): Devs Skyla
+- [Ari](htpps://github.com/zigaz23): Devs Pluvia
+- [tonic](https://github.com/Tonic990): Devs Prime
