@@ -51,5 +51,5 @@
 - [Skyzo](https://github.com/ridho17-ind): Devs Flicks
 - [Fariz](https://github.com/fjgaming212): Devs Xmusic
 - [Skyla](https://github.com/SkylaIND): Devs Skyla
-- [Ari](htpps://github.com/zigaz23): Devs Pluvia
+- [Ari](https://github.com/zigaz23): Devs Pluvia
 - [Tonic](https://github.com/Tonic990): Devs Prime
