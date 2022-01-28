@@ -41,12 +41,13 @@
 <a href="https://t.me/StringSkylaBot"><img src="https://img.shields.io/badge/Generate%20Gen%20Bot-blueviolet?style=for-the-badge&logo=appveyor" width="245""/></a>
  </p> 
 
+## Credits
+- callmusic 
+- Yukki
+- PyTgCalls
 
-##**[The Yukki Music](https://github.com/NotReallyShikhar/YukkiMusicBot) | [Not Realy Shikhar](https://github.com/NotReallyShikhar)**
-
-###🔰 *THANKS TO CONTRIBUTOR*
+#### Contributors
 - [Kenkan](https://github.com/kenkansaja)
 - [Skyzo](https://github.com/ridho17-ind)
 - [Fariz](https://github.com/fjgaming212)
 - [Skyla](https://github.com/SkylaIND)
-
