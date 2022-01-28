@@ -52,8 +52,8 @@
 
 
 ##CONTRIBUTOR
-**[Kenkan](https://github.com/kenkansaja)
-**[Skyzo](https://github.com/ridho17-ind)
-**[Fariz](https://github.com/fjgaming212)
-[Skyla](https://github.com/SkylaIND)**
+- [Kenkan](https://github.com/kenkansaja)
+- [Skyzo](https://github.com/ridho17-ind)
+- [Fariz](https://github.com/fjgaming212)
+- [Skyla](https://github.com/SkylaIND)**
 
