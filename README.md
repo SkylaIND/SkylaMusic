@@ -50,7 +50,6 @@
 
 **[The Yukki Music](https://github.com/NotReallyShikhar/YukkiMusicBot) | [Not Realy Shikhar](https://github.com/NotReallyShikhar)**
 
-##
 
 🔰 *THANKS TO CONTRIBUTOR*
 - [Kenkan](https://github.com/kenkansaja)
