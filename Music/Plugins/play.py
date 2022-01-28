@@ -164,7 +164,7 @@ async def play(_, message: Message):
         )
         title = "Selected Audio from Telegram"
         link = "https://t.me/skylasupport"
-        thumb = "cache/Audio.png"
+        thumb = "cache/IMG_20220111_150054_612.jpg
         videoid = "smex1"
     elif url:
         what = "URL Searched"
@@ -289,7 +289,7 @@ async def play(_, message: Message):
         buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
         hmo = await message.reply_photo(
             photo=thumb, 
-            caption=(f"1️⃣<b>{title1[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n2️⃣<b>{title2[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n3️⃣<b>{title3[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n4️⃣<b>{title4[:25]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n5️⃣<b>{title5[:25]}</b>\n┣ ⚡ __Powered {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>"),    
+            caption=(f"1️⃣<b>{title1[:70]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n2️⃣<b>{title2[:70]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n3️⃣<b>{title3[:70]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n4️⃣<b>{title4[:70]}</b>\n┣ ⚡ __Powered By {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n5️⃣<b>{title5[:70]}</b>\n┣ ⚡ __Powered {BOT_NAME}__\n┗ 💡 <u>__[Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>"),    
             reply_markup=InlineKeyboardMarkup(buttons),
         )  
         disable_web_page_preview=True
