@@ -79,27 +79,27 @@ async def play(_, message: Message):
     if not a.can_manage_voice_chats:
         await message.reply_text(
         "Saya tidak memiliki izin yang diperlukan untuk melakukan tindakan ini."
-        + "\n**Izin:** __KELOLA OBROLAN SUARA__")
+        + "\n❌**Izin:** __KELOLA OBROLAN SUARA__")
         return
     if not a.can_delete_messages:
         await message.reply_text(
         "Saya tidak memiliki izin yang diperlukan untuk melakukan tindakan ini."
-        + "\n**Izin:** __HAPUS PESAN__")
+        + "\n❌**Izin:** __HAPUS PESAN__")
         return
     if not a.can_invite_users:
         await message.reply_text(
         "Saya tidak memiliki izin yang diperlukan untuk melakukan tindakan ini."
-        + "\n**Izin:** __UNDANG PENGGUNA MELALUI TAUTAN__")
+        + "\n❌**Izin:** __UNDANG PENGGUNA MELALUI TAUTAN__")
         return
     if not a.can_restrict_members:
         await message.reply_text(
         "Saya tidak memiliki izin yang diperlukan untuk melakukan tindakan ini."
-        + "\n**Permission:** __BAN USERS__")
+        + "\n❌**Izin:** __BAN PENGGUNA__")
         return
     try:
         b = await app.get_chat_member(message.chat.id , ASSID) 
         if b.status == "kicked":
-            await message.reply_text(f"{ASSNAME}(@{ASSUSERNAME}) is banned in your chat **{chat_title}**\n\nUnban it first to use Music")
+            await message.reply_text(f"{ASSNAME}(@{ASSUSERNAME}) di banned di obrolan anda **{chat_title}**\n\nUnban agar bisa digunakan")
             return
     except UserNotParticipant:
         if message.chat.username:
@@ -108,7 +108,7 @@ async def play(_, message: Message):
                 await message.reply(f"{ASSNAME} Berhasil Bergabung",) 
                 await remove_active_chat(chat_id)
             except Exception as e:
-                await message.reply_text(f"__**Assistant Gagal Bergabung**__\n\n**Karena**:{e}")
+                await message.reply_text(f"❌__**Assistant Gagal Bergabung**__\n\n**Karena**:{e}")
                 return
         else:
               try:
@@ -117,14 +117,14 @@ async def play(_, message: Message):
                       link_hash = (invite_link.replace("+", "")).split("t.me/")[1]
                       await ASS_ACC.join_chat(f"https://t.me/joinchat/{link_hash}")
                   return await message.reply(
-                      f"{ASSNAME} Berhasil Bergabung Ke Group",
+                      f"✔️{ASSNAME} Berhasil Bergabung Ke Group",
                   )
                   await remove_active_chat(chat_id)
               except UserAlreadyParticipant:
                   pass
               except Exception as e:
                   return await message.reply_text(
-                      f"__**Assistant Gagal Bergabung**__\n\n**Karena**:{e}"
+                      f"❌__**Assistant Gagal Bergabung**__\n\n**Karena**:{e}"
                   )
     audio = (
           (message.reply_to_message.audio or message.reply_to_message.voice)
