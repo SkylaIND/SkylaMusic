@@ -62,7 +62,7 @@ def time_to_seconds(time):
 async def play(_, message: Message):
     chat_id = message.chat.id
     if message.sender_chat:
-        return await message.reply_text("You're an __Anonymous Admin__!\nRevert back to User Account From Admin Rights.")  
+        return await message.reply_text("Nonaktifkan Izin __Anonymous Admin__!\nKembalikan ke Akun Pengguna Dari Hak Admin.")  
     user_id = message.from_user.id
     chat_title = message.chat.title
     username = message.from_user.first_name
@@ -70,21 +70,21 @@ async def play(_, message: Message):
     if await is_on_off(1):
         LOG_ID = "-1001429892362"
         if int(chat_id) != int(LOG_ID):
-            return await message.reply_text(f"Bot is under Maintenance. Sorry for the inconvenience!")
-        return await message.reply_text(f"Bot is under Maintenance. Sorry for the inconvenience!")
+            return await message.reply_text(f"Bot sedang dalam perbaikan. Maaf untuk ketidaknyamanannya!")
+        return await message.reply_text(f"Bot sedang dalam Perbaikan. Maaf untuk ketidaknyamanannya!")
     a = await app.get_chat_member(message.chat.id , BOT_ID)
     if a.status != "administrator":
-        await message.reply_text(f"I need to be admin with some permissions:\n\n- **can_manage_voice_chats:** To manage voice chats\n- **can_delete_messages:** To delete Music's Searched Waste\n- **can_invite_users**: For inviting assistant to chat\n**can_restrict_members**: For Protecting Music from Spammers.")
+        await message.reply_text(f"Saya perlu menjadi admin dengan beberapa izin:\n\n- **Can_manage_voice_chat:** Untuk mengelola obrolan suara\n- **can_delete_messages:** Untuk menghapus Sampah yang Dicari Musik\n- **can_invite_users**: Untuk mengundang asisten untuk mengobrol\n**can_restrict_members**: Untuk Melindungi Musik dari Spammer.")
         return
     if not a.can_manage_voice_chats:
         await message.reply_text(
-        "I don't have the required permission to perform this action."
-        + "\n**Permission:** __MANAGE VOICE CHATS__")
+        "Saya tidak memiliki izin yang diperlukan untuk melakukan tindakan ini."
+        + "\n**Izin:** __KELOLA OBROLAN SUARA__")
         return
     if not a.can_delete_messages:
         await message.reply_text(
-        "I don't have the required permission to perform this action."
-        + "\n**Permission:** __DELETE MESSAGES__")
+        "Saya tidak memiliki izin yang diperlukan untuk melakukan tindakan ini."
+        + "\n**Izin:** __HAPUS PESAN__")
         return
     if not a.can_invite_users:
         await message.reply_text(
