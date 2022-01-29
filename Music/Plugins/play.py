@@ -138,7 +138,7 @@ async def play(_, message: Message):
         fucksemx = 1
         what = "Audio Searched"
         await LOG_CHAT(message, what)
-        mystic = await message.reply_text(f"**💸 Processing Your Song....**")
+        mystic = await message.reply_text(f"**🔄 Processing Your Song....**")
         if audio.file_size > 157286400:
             await mystic.edit_text("Ukuran File Audio Harus Kurang dari 150 mb") 
             return
@@ -183,7 +183,7 @@ async def play(_, message: Message):
                 idxz = (result["id"])
                 videoid = (result["id"])
         except Exception as e:
-            return await mystic.edit_text(f"Lagu Tidak Ditemukan.\n**Karena Alasan:**{e}")    
+            return await mystic.edit_text(f"Lagu Tidak Ditemukan.\n**Kemungkinan Alasan:**{e}")    
         smex = int(time_to_seconds(duration))
         if smex > DURATION_LIMIT:
             return await mystic.edit_text(f"**__Duration Error__**\n\n**Durasi Yang Diizinkan: **90 minute(s)\n**Durasi Yang Diterima:** {duration} minute(s)")
@@ -283,7 +283,7 @@ async def play(_, message: Message):
             ID4 = (result[3]["id"])
             ID5 = (result[4]["id"])
         except Exception as e:
-            return await mystic.edit_text(f"Lagu Tidak Ditemukan.\n**Karena Alasan:**{e}")
+            return await mystic.edit_text(f"Lagu Tidak Ditemukan.\n**Kemungkinan Alasan:**{e}")
         thumb ="cache/IMG_2.png"
         await mystic.delete()   
         buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
@@ -369,7 +369,7 @@ async def startyuplay(_,CallbackQuery):
     try:
         id,duration,user_id = callback_request.split("|") 
     except Exception as e:
-        return await CallbackQuery.message.edit(f"Terjadi Kesalahan\n**Karena Alasan**:{e}")
+        return await CallbackQuery.message.edit(f"Terjadi Kesalahan\n**Kemungkinan Alasan**:{e}")
     if duration == "None":
         return await CallbackQuery.message.reply_text(f"Maaf!, Video Langsung tidak didukung")      
     if CallbackQuery.from_user.id != int(user_id):
@@ -508,7 +508,7 @@ async def popat(_,CallbackQuery):
     try:
         id , query, user_id = callback_request.split("|") 
     except Exception as e:
-        return await CallbackQuery.message.edit(f"Terjadi Kesalahan\n**Karena Alasan**:{e}")       
+        return await CallbackQuery.message.edit(f"Terjadi Kesalahan\n**Kemungkinan Alasan**:{e}")       
     if CallbackQuery.from_user.id != int(user_id):
         return await CallbackQuery.answer("Ini bukan untukmu! Cari Lagu Anda Sendiri", show_alert=True)
     i=int(id)
@@ -547,7 +547,7 @@ async def popat(_,CallbackQuery):
         ID9 = (result[8]["id"])
         ID10 = (result[9]["id"])                    
     except Exception as e:
-        return await mystic.edit_text(f"Lagu Tidak Ditemukan.\n**Karena Alasan:**{e}")
+        return await mystic.edit_text(f"Lagu Tidak Ditemukan.\n**Kemungkinan Alasan:**{e}")
     if i == 1:
         buttons = search_markup2(ID6, ID7, ID8, ID9, ID10, duration6, duration7, duration8, duration9, duration10 ,user_id, query)
         await CallbackQuery.edit_message_text(
@@ -576,7 +576,7 @@ async def play_playlist_cmd(_, message):
     buttons = playlist_markup(user_name, user_id)
     await message.reply_photo(
     photo=thumb, 
-    caption=("**__Music's Playlist Feature__**\n\nSelect the Playlist you want to play!."),    
+    caption=("**__Music's Playlist Feature__**\n\nPilih playlist yang ingin Anda putar!."),    
     reply_markup=InlineKeyboardMarkup(buttons),
     )
     return
