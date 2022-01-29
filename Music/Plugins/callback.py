@@ -465,7 +465,7 @@ Personal Playlist Playing."""
                     a1,
                 ],
                 [
-                    InlineKeyboardButton(text="🗑 Close Menu", callback_data=f'close2')
+                    InlineKeyboardButton(text="🗑 ᴛᴜᴛᴜᴘ", callback_data=f'close2')
                 ]    
             ]
         )
@@ -612,7 +612,7 @@ Group Playlist Playing."""
                     a1,
                 ],
                 [
-                    InlineKeyboardButton(text="🗑 Close Menu", callback_data=f'close2')
+                    InlineKeyboardButton(text="🗑 ᴛᴜᴛᴜᴘ", callback_data=f'close2')
                 ]    
             ]
         )
@@ -764,7 +764,7 @@ async def P_list(_,CallbackQuery):
                 ],
                 [
                     a3,
-                    InlineKeyboardButton(text="🗑 Close Menu", callback_data=f'close2')
+                    InlineKeyboardButton(text="🗑 ᴛᴜᴛᴜᴘ", callback_data=f'close2')
                 ]    
             ]
         )
@@ -819,7 +819,7 @@ async def G_list(_,CallbackQuery):
                 ],
                 [
                     a3,
-                    InlineKeyboardButton(text="🗑 Close Menu", callback_data=f'close2')
+                    InlineKeyboardButton(text="🗑 ᴛᴜᴛᴜᴘ", callback_data=f'close2')
                 ]    
             ]
         )
