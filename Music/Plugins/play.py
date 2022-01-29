@@ -138,7 +138,7 @@ async def play(_, message: Message):
         fucksemx = 1
         what = "Audio Searched"
         await LOG_CHAT(message, what)
-        mystic = await message.reply_text(f"**🔄 Processing Your Song....**")
+        mystic = await message.reply_text(f"**🔄 Memproses Lagu Anda....**")
         if audio.file_size > 157286400:
             await mystic.edit_text("Ukuran File Audio Harus Kurang dari 150 mb") 
             return
@@ -162,7 +162,7 @@ async def play(_, message: Message):
             )
             else file_name,
         )
-        title = "Selected Audio from Telegram"
+        title = "Audio yang Dipilih dari Telegram"
         link = "https://t.me/skylasupport"
         thumb = "cache/IMG_20220111_150054_612.jpg"
         videoid = "smex1"
@@ -256,14 +256,14 @@ async def play(_, message: Message):
             buttons = playlist_markup(user_name, user_id)
             hmo = await message.reply_photo(
             photo=thumb, 
-            caption=("**Usage:** /play [Music Name Or Youtube Link Or Reply to Audio]\n\nIf You Want To Play Playlists! Select The One From Below.\n\n**More Info In [Group](t.me/{GROUP})**"),    
+            caption=("**Usage:** /play [Music Name Or Youtube Link Or Reply to Audio]\n\nJika Anda Ingin Memutar Playlist! Pilih Yang Dari Bawah.\n\n**Info Lebih Lanjut Di [Group](t.me/{GROUP})**"),    
             reply_markup=InlineKeyboardMarkup(buttons),
             ) 
             return
         what = "Query Given"
         await LOG_CHAT(message, what)
         query = message.text.split(None, 1)[1]
-        mystic = await message.reply_text("**🔎 Sedang mencari lagu**")
+        mystic = await message.reply_text("**🔎 Memproses Lagu Anda**")
         try:
             a = VideosSearch(query, limit=5)
             result = (a.result()).get("result")
@@ -438,7 +438,7 @@ async def startyuplay(_,CallbackQuery):
             except Exception as e:
                 taken = "00:00"
             size = d['_total_bytes_str']
-            mystic.edit(f"**📥 Downloaded {title[:50]}.....**\n\n**📚 FileSize:** {size}\n**⌛ Time Taken:** {taken} sec\n\n**📑 Converting Flicks File**")
+            mystic.edit(f"**📥 Downloaded {title[:50]}.....**\n\n**📚 FileSize:** {size}\n**⌛ Time Taken:** {taken} sec\n\n**📑 Converting Skyla File**")
             print(f"[{videoid}] Downloaded| Elapsed: {taken} seconds")    
     loop = asyncio.get_event_loop()
     x = await loop.run_in_executor(None, download, url, my_hook)
