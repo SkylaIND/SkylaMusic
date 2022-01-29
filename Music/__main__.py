@@ -34,7 +34,7 @@ async def load_start():
             await app.edit_message_text(
                 restart_data["chat_id"],
                 restart_data["message_id"],
-                "**Restarted The Bot Successfully.**",
+                "**Restart Bot Berhasil.**",
             )
         except Exception:
             pass
@@ -51,8 +51,8 @@ async def load_start():
         except Exception as e:
             print("Error came while clearing db")
             pass     
-    await app.send_message(LOG_GROUP_ID, "**[🤖](https://t.me/jdididndndjsj/38283) The Music Bot Started Master...**")
-    await client.send_message(LOG_GROUP_ID, "**[🦸🏻‍♂️](https://t.me/jdididndndjsj/38284) The Music Assistant Started Master...**")
+    await app.send_message(LOG_GROUP_ID, "**[🤖](https://telegra.ph/file/106606ab792643444a942.jpg) BOT MUSIC BERHASIL DIAKTIFKAN...**")
+    await client.send_message(LOG_GROUP_ID, "**[😎](https://telegra.ph/file/106606ab792643444a942.jpg) ASSISTANT MUSIC BERHASIL DIAKTIFKAN...**")
     print("[INFO]: STARTED")
     
    
