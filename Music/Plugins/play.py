@@ -88,12 +88,12 @@ async def play(_, message: Message):
         return
     if not a.can_invite_users:
         await message.reply_text(
-        "I don't have the required permission to perform this action."
-        + "\n**Permission:** __INVITE USERS VIA LINK__")
+        "Saya tidak memiliki izin yang diperlukan untuk melakukan tindakan ini."
+        + "\n**Izin:** __UNDANG PENGGUNA MELALUI TAUTAN__")
         return
     if not a.can_restrict_members:
         await message.reply_text(
-        "I don't have the required permission to perform this action."
+        "Saya tidak memiliki izin yang diperlukan untuk melakukan tindakan ini."
         + "\n**Permission:** __BAN USERS__")
         return
     try:
@@ -105,10 +105,10 @@ async def play(_, message: Message):
         if message.chat.username:
             try: 
                 await ASS_ACC.join_chat(f"{message.chat.username}")
-                await message.reply(f"{ASSNAME} Joined Successfully",) 
+                await message.reply(f"{ASSNAME} Berhasil Bergabung",) 
                 await remove_active_chat(chat_id)
             except Exception as e:
-                await message.reply_text(f"__**Assistant Failed To Join**__\n\n**Reason**:{e}")
+                await message.reply_text(f"__**Assistant Gagal Bergabung**__\n\n**Karena**:{e}")
                 return
         else:
               try:
@@ -117,14 +117,14 @@ async def play(_, message: Message):
                       link_hash = (invite_link.replace("+", "")).split("t.me/")[1]
                       await ASS_ACC.join_chat(f"https://t.me/joinchat/{link_hash}")
                   return await message.reply(
-                      f"{ASSNAME} Successfully Joined Groups",
+                      f"{ASSNAME} Berhasil Bergabung Ke Group",
                   )
                   await remove_active_chat(chat_id)
               except UserAlreadyParticipant:
                   pass
               except Exception as e:
                   return await message.reply_text(
-                      f"__**Assistant Failed to Join Groups**__\n\n**Reason**:{e}"
+                      f"__**Assistant Gagal Bergabung**__\n\n**Karena**:{e}"
                   )
     audio = (
           (message.reply_to_message.audio or message.reply_to_message.voice)
@@ -140,11 +140,11 @@ async def play(_, message: Message):
         await LOG_CHAT(message, what)
         mystic = await message.reply_text(f"**💸 Processing Your Song....**")
         if audio.file_size > 157286400:
-            await mystic.edit_text("Audio File Size Should Be Less Than 150 mb") 
+            await mystic.edit_text("Ukuran File Audio Harus Kurang dari 150 mb") 
             return
         duration = round(audio.duration / 60)
         if duration > DURATION_LIMIT:
-            return await mystic.edit_text(f"**__Duration Error__**\n\n**Allowed Duration: **{DURATION_LIMIT} minute(s)\n**Received Duration:** {duration} minute(s)")
+            return await mystic.edit_text(f"**__Duration Error__**\n\n**Durasi yang Diizinkan: **{DURATION_LIMIT} minute(s)\n**Durasi yang Diterima:** {duration} minute(s)")
         file_name = audio.file_unique_id + '.' + (
             (
                 audio.file_name.split('.')[-1]
@@ -183,14 +183,14 @@ async def play(_, message: Message):
                 idxz = (result["id"])
                 videoid = (result["id"])
         except Exception as e:
-            return await mystic.edit_text(f"Soung Not Found.\n**Possible Reason:**{e}")    
+            return await mystic.edit_text(f"Lagu Tidak Ditemukan.\n**Karena Alasan:**{e}")    
         smex = int(time_to_seconds(duration))
         if smex > DURATION_LIMIT:
-            return await mystic.edit_text(f"**__Duration Error__**\n\n**Allowed Duration: **90 minute(s)\n**Received Duration:** {duration} minute(s)")
+            return await mystic.edit_text(f"**__Duration Error__**\n\n**Durasi Yang Diizinkan: **90 minute(s)\n**Durasi Yang Diterima:** {duration} minute(s)")
         if duration == "None":
-            return await mystic.edit_text("Sorry! Live videos are not Supported")
+            return await mystic.edit_text("Maaf! Video langsung tidak Didukung")
         if views == "None":
-            return await mystic.edit_text("Sorry! Live videos are not Supported")
+            return await mystic.edit_text("Maaf! Video langsung tidak Didukung")
         semxbabes = (f"Downloading {title[:50]}")
         await mystic.edit(semxbabes)
         theme = random.choice(themes)
@@ -263,7 +263,7 @@ async def play(_, message: Message):
         what = "Query Given"
         await LOG_CHAT(message, what)
         query = message.text.split(None, 1)[1]
-        mystic = await message.reply_text("**🔎 Searching Song**")
+        mystic = await message.reply_text("**🔎 Sedang mencari lagu**")
         try:
             a = VideosSearch(query, limit=5)
             result = (a.result()).get("result")
@@ -283,7 +283,7 @@ async def play(_, message: Message):
             ID4 = (result[3]["id"])
             ID5 = (result[4]["id"])
         except Exception as e:
-            return await mystic.edit_text(f"Soung Not Found.\n**Possible Reason:**{e}")
+            return await mystic.edit_text(f"Lagu Tidak Ditemukan.\n**Karena Alasan:**{e}")
         thumb ="cache/IMG_2.png"
         await mystic.delete()   
         buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
@@ -369,11 +369,11 @@ async def startyuplay(_,CallbackQuery):
     try:
         id,duration,user_id = callback_request.split("|") 
     except Exception as e:
-        return await CallbackQuery.message.edit(f"Error Occured\n**Possible reason could be**:{e}")
+        return await CallbackQuery.message.edit(f"Terjadi Kesalahan\n**Karena Alasan**:{e}")
     if duration == "None":
-        return await CallbackQuery.message.reply_text(f"Sorry!, Live Videos are not supported")      
+        return await CallbackQuery.message.reply_text(f"Maaf!, Video Langsung tidak didukung")      
     if CallbackQuery.from_user.id != int(user_id):
-        return await CallbackQuery.answer("This is not for you! Search You Own Song nigga", show_alert=True)
+        return await CallbackQuery.answer("Ini bukan untukmu! Cari Lagu Anda Sendiri", show_alert=True)
     await CallbackQuery.message.delete()
     checking = f"[{CallbackQuery.from_user.first_name}](tg://user?id={userid})"
     url = (f"https://www.youtube.com/watch?v={id}")
@@ -381,13 +381,13 @@ async def startyuplay(_,CallbackQuery):
     idx = id
     smex = int(time_to_seconds(duration))
     if smex > DURATION_LIMIT:
-        await CallbackQuery.message.reply_text(f"**__Duration Error__**\n\n**Allowed Duration: **90 minute(s)\n**Received Duration:** {duration} minute(s)")
+        await CallbackQuery.message.reply_text(f"**__Duration Error__**\n\n**Durasi Yang Diizinkan: **90 minute(s)\n**Durasi Yang Diterima:** {duration} minute(s)")
         return 
     try:
         with yt_dlp.YoutubeDL(ytdl_opts) as ytdl:
             x = ytdl.extract_info(url, download=False)
     except Exception as e:
-        return await CallbackQuery.message.reply_text(f"Failed to download this video.\n\n**Reason**:{e}") 
+        return await CallbackQuery.message.reply_text(f"Gagal mengunduh video ini.\n\n**Karena**:{e}") 
     title = (x["title"])
     await CallbackQuery.answer(f"Selected {title[:20]}.... \nProcessing..", show_alert=True)
     mystic = await CallbackQuery.message.reply_text(f"Downloading {title[:50]}")
@@ -508,9 +508,9 @@ async def popat(_,CallbackQuery):
     try:
         id , query, user_id = callback_request.split("|") 
     except Exception as e:
-        return await CallbackQuery.message.edit(f"Error Occured\n**Possible reason could be**:{e}")       
+        return await CallbackQuery.message.edit(f"Terjadi Kesalahan\n**Karena Alasan**:{e}")       
     if CallbackQuery.from_user.id != int(user_id):
-        return await CallbackQuery.answer("This is not for you! Search You Own Song", show_alert=True)
+        return await CallbackQuery.answer("Ini bukan untukmu! Cari Lagu Anda Sendiri", show_alert=True)
     i=int(id)
     query = str(query)
     try:
@@ -547,7 +547,7 @@ async def popat(_,CallbackQuery):
         ID9 = (result[8]["id"])
         ID10 = (result[9]["id"])                    
     except Exception as e:
-        return await mystic.edit_text(f"Soung Not Found.\n**Possible Reason:**{e}")
+        return await mystic.edit_text(f"Lagu Tidak Ditemukan.\n**Karena Alasan:**{e}")
     if i == 1:
         buttons = search_markup2(ID6, ID7, ID8, ID9, ID10, duration6, duration7, duration8, duration9, duration10 ,user_id, query)
         await CallbackQuery.edit_message_text(
