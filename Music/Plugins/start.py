@@ -119,9 +119,11 @@ async def play(_, message: Message):
         await app.send_message(
             message.chat.id,
             text=f"""
-**[🗣]({BOT_IMG}) Hello {rpk}!
-🤖 [{BOT_NAME}](tg://user?id=2129034376) Adalah Bot Yang Dapat Digunakan Untuk Mendengarkan Lagu Di Obrolan Suara Dan Dapat Memutar Video Di Obrolan Suara!
-🧰 Untuk mengetahui semua perintah bot klik command**
+**[👋]({BOT_IMG}) ᴡᴇʟᴄᴏᴍᴇ {rpk}!
+
+✨ [{BOT_NAME}](tg://user?id=2129034376) ᴍᴇᴍᴜɴɢᴋɪɴᴋᴀɴ ᴀɴᴅᴀ ᴍᴇᴍᴜᴛᴀʀ ᴍᴜsɪᴋ ᴅᴀɴ ᴠɪᴅᴇᴏ ᴅɪ ɢʀᴜᴘ ᴍᴇʟᴀʟᴜɪ ᴏʙʀᴏʟᴀɴ ᴠɪᴅᴇᴏ ᴛᴇʟᴇɢʀᴀᴍ!
+
+✨ ᴄᴀʀɪ ᴛᴀʜᴜ sᴇᴍᴜᴀ ᴘᴇʀɪɴᴛᴀʜ ʙᴏᴛ ᴅᴀɴ ᴄᴀʀᴀ ᴋᴇʀᴊᴀɴʏᴀ ᴅᴇɴɢᴀɴ ᴍᴇɴɢᴋʟɪᴋ ᴛᴏᴍʙᴏʟ » ᴄᴏᴍᴍᴀɴᴅ!**
 """,
             parse_mode="markdown",
             reply_markup=pstart_markup,
