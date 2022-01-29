@@ -16,11 +16,11 @@ async def smex(_, message):
     if state == "enable":
         user_id = 1
         await add_on(user_id)
-        await message.reply_text("Music Enabled for Maintenance")
+        await message.reply_text("✔️ Music Diaktifkan Untuk Pemeliharaan")
     elif state == "disable":
         user_id = 1
         await add_off(user_id)
-        await message.reply_text("Maintenance Mode Disabled")
+        await message.reply_text("❌ Mode Pemeliharaan Dinonaktifkan")
     else:
         await message.reply_text(usage)
 
@@ -36,10 +36,10 @@ async def sls_skfs(_, message):
     if state == "enable":
         user_id = 2
         await add_on(user_id)
-        await message.reply_text("Speedtest Enabled")
+        await message.reply_text("✔️ Speedtest Diaktifkan")
     elif state == "disable":
         user_id = 2
         await add_off(user_id)
-        await message.reply_text("Speedtest Disabled")
+        await message.reply_text("❌ Speedtest Dinonaktifkan")
     else:
         await message.reply_text(usage)
