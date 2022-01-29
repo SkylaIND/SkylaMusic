@@ -11,12 +11,12 @@ from Music.config import GROUP, CHANNEL
 def play_markup(videoid, user_id):
     buttons= [
             [
-                InlineKeyboardButton(text="💬 Support", url=f"https://t.me/{GROUP}"),
-                InlineKeyboardButton(text="⛑️ Channel", url=f"https://t.me/{CHANNEL}"),
+                InlineKeyboardButton(text="💬 sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{GROUP}"),
+                InlineKeyboardButton(text="⛑️ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{CHANNEL}"),
             ],
             [      
-                InlineKeyboardButton(text="🖱️ Menu", callback_data=f'other {videoid}|{user_id}'),
-                InlineKeyboardButton(text="🗑️ Close", callback_data=f'close2')
+                InlineKeyboardButton(text="🖱️ ᴍᴇɴᴜ", callback_data=f'other {videoid}|{user_id}'),
+                InlineKeyboardButton(text="🗑️ ᴛᴜᴛᴜᴘ", callback_data=f'close2')
             ],
         ]
     return buttons 
@@ -31,15 +31,15 @@ def others_markup(videoid, user_id):
                 InlineKeyboardButton(text="▢", callback_data=f'stopvc2'),
             ],
             [
-                InlineKeyboardButton(text="➕ Add Your List ➕", callback_data=f'playlist {videoid}|{user_id}'),
-                InlineKeyboardButton(text="➕ Add Group List ➕", callback_data=f'group_playlist {videoid}|{user_id}')
+                InlineKeyboardButton(text="➕ ᴀᴅᴅ ʏᴏᴜʀ ʟɪsᴛ ➕", callback_data=f'playlist {videoid}|{user_id}'),
+                InlineKeyboardButton(text="➕ ᴀᴅᴅ ɢʀᴏᴜᴘ ʟɪsᴛ ➕", callback_data=f'group_playlist {videoid}|{user_id}')
             ],
             [
-                InlineKeyboardButton(text="🎵 Get Audio", callback_data=f'gets audio|{videoid}|{user_id}'),
-                InlineKeyboardButton(text="🎥 Get Video", callback_data=f'gets video|{videoid}|{user_id}')
+                InlineKeyboardButton(text="🎵 ᴜɴᴅᴜʜ ᴀᴜᴅɪᴏ", callback_data=f'gets audio|{videoid}|{user_id}'),
+                InlineKeyboardButton(text="🎥 ᴜɴᴅᴜʜ ᴠɪᴅᴇᴏ", callback_data=f'gets video|{videoid}|{user_id}')
             ],
             [
-                InlineKeyboardButton(text="⬅️ Back To Button", callback_data=f'goback {videoid}|{user_id}'),
+                InlineKeyboardButton(text="ᴋᴇᴍʙᴀʟɪ", callback_data=f'goback {videoid}|{user_id}'),
             ],
         ]
     return buttons 
@@ -65,7 +65,7 @@ play_keyboard = InlineKeyboardMarkup(
                 ],
                 [
                     InlineKeyboardButton(
-                        "Close Menu", callback_data="close"
+                        "ᴛᴜᴛᴜᴘ", callback_data="close"
                     )
                 ]    
             ]
@@ -82,7 +82,7 @@ def audio_markup(videoid, user_id):
                 InlineKeyboardButton(text="▢", callback_data=f'stopvc2')
             ],
             [
-                InlineKeyboardButton(text="🗑 Close Menu", callback_data="close2")              
+                InlineKeyboardButton(text="🗑 ᴛᴜᴛᴜᴘ", callback_data="close2")              
             ],
         ]
     return buttons 
@@ -101,9 +101,9 @@ def search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, dura
             ],
             [ 
                 
-                InlineKeyboardButton(text="⬅️", callback_data=f'popat 1|{query}|{user_id}'), 
+                InlineKeyboardButton(text="⪻", callback_data=f'popat 1|{query}|{user_id}'), 
                 InlineKeyboardButton(text="❌​", callback_data=f"ppcl2 smex|{user_id}") ,
-                InlineKeyboardButton(text="➡️", callback_data=f'popat 1|{query}|{user_id}')             
+                InlineKeyboardButton(text="⪼", callback_data=f'popat 1|{query}|{user_id}')             
             ],
         ]
     return buttons   
@@ -121,9 +121,9 @@ def search_markup2(ID6, ID7, ID8, ID9, ID10, duration6, duration7, duration8, du
             ],
             [ 
                 
-                InlineKeyboardButton(text="⬅️", callback_data=f'popat 2|{query}|{user_id}'), 
+                InlineKeyboardButton(text="⪻", callback_data=f'popat 2|{query}|{user_id}'), 
                 InlineKeyboardButton(text="❌", callback_data=f"ppcl2 smex|{user_id}") ,
-                InlineKeyboardButton(text="➡️", callback_data=f'popat 2|{query}|{user_id}')             
+                InlineKeyboardButton(text="⪼", callback_data=f'popat 2|{query}|{user_id}')             
             ],
         ]
     return buttons 
@@ -132,10 +132,10 @@ def search_markup2(ID6, ID7, ID8, ID9, ID10, duration6, duration7, duration8, du
 def personal_markup(link):
     buttons= [
             [
-                InlineKeyboardButton(text="Watch On Youtube", url=f'{link}')
+                InlineKeyboardButton(text="ᴡᴀᴛᴄʜ ᴏɴ ʏᴏᴜᴛᴜʙᴇ", url=f'{link}')
             ],
             [ 
-                InlineKeyboardButton(text="🗑 Close", callback_data=f'close2')
+                InlineKeyboardButton(text="🗑 ᴛᴜᴛᴜᴘ", callback_data=f'close2')
             ],
         ]
     return buttons   
@@ -144,12 +144,12 @@ start_keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "📜 Commands", url="https://telegra.ph/SKYLA-ROBOT-COMMANDS-01-25"
+                        "📜ᴅᴀꜰᴛᴀʀ ᴘᴇʀɪɴᴛᴀʜ📜", url="https://telegra.ph/SKYLA-ROBOT-COMMANDS-01-25"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🗑 Close Menu", callback_data="close2"
+                        "🗑 ᴛᴜᴛᴜᴘ", callback_data="close2"
                     )
                 ]    
             ]
@@ -159,10 +159,10 @@ confirm_keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Yes", callback_data="cbdel"
+                        "ʏᴀ", callback_data="cbdel"
                     ),
                     InlineKeyboardButton(
-                        "No", callback_data="close2"
+                        "ᴛɪᴅᴀᴋ", callback_data="close2"
                     )
                 ]    
             ]
@@ -172,10 +172,10 @@ confirm_group_keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Yes", callback_data="cbgroupdel"
+                        "ʏᴀ", callback_data="cbgroupdel"
                     ),
                     InlineKeyboardButton(
-                        "No", callback_data="close2"
+                        "ᴛɪᴅᴀᴋ", callback_data="close2"
                     )
                 ]    
             ]
@@ -185,7 +185,7 @@ close_keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🗑 Close", callback_data="close2"
+                        "🗑 ᴛᴜᴛᴜᴘ", callback_data="close2"
                     )
                 ]    
             ]
@@ -195,15 +195,15 @@ play_list_keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Users Playlist", callback_data="P_list"
+                        "ᴜsᴇʀs ᴘʟᴀʏʟɪsᴛ", callback_data="P_list"
                     ),
                     InlineKeyboardButton(
-                        "Groups Playlist", callback_data="G_list"
+                        "ɢʀᴏᴜᴘs ᴘʟᴀʏʟɪsᴛ", callback_data="G_list"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🗑 Close", callback_data="close2"
+                        "🗑 ᴛᴜᴛᴜᴘ", callback_data="close2"
                     )
                 ]
             ]
@@ -216,7 +216,7 @@ def playlist_markup(user_name, user_id):
                 InlineKeyboardButton(text=f"{user_name[:8]}", callback_data=f'play_playlist {user_id}|personal'),
             ],
             [
-                InlineKeyboardButton(text="🗑 Close Playlist", callback_data="close2")              
+                InlineKeyboardButton(text="🗑 ᴛᴜᴛᴜᴘ ᴘʟᴀʏʟɪsᴛ", callback_data="close2")              
             ],
         ]
     return buttons
