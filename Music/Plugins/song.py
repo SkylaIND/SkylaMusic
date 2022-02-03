@@ -76,14 +76,14 @@ async def mpthree(_, message: Message):
                 idxz = (result["id"])
                 videoid = (result["id"])
         except Exception as e:
-            return await mystic.edit_text(f"Soung Not Found.\n**Possible Reason:**{e}")    
+            return await mystic.edit_text(f"Lagu tidak ditemukan.\n**Kemungkinan Alasan:**{e}")    
         smex = int(time_to_seconds(duration))
         if smex > DURATION_LIMIT:
-            return await mystic.edit_text(f"**__Duration Error__**\n\n**Allowed Duration: **90 minute(s)\n**Received Duration:** {duration} minute(s)")
+            return await mystic.edit_text(f"**__Kesalahan Durasi__**\n\n**Durasi yang diizinkan: **90 minute(s)\n**Durasi Yang Diterima:** {duration} minute(s)")
         if duration == "None":
-            return await mystic.edit_text("Sorry! Live videos are not Supported")
+            return await mystic.edit_text("Maaf! Video langsung tidak Didukung")
         if views == "None":
-            return await mystic.edit_text("Sorry! Live videos are not Supported")
+            return await mystic.edit_text("Maaf! Video langsung tidak Didukung")
         thumb = await down_thumb(thumbnail, user_id)
         buttons = gets(videoid, user_id)
         m = await message.reply_photo(
@@ -94,7 +94,7 @@ async def mpthree(_, message: Message):
         os.remove(thumb)
     else:
         if len(message.command) < 2:
-            await message.reply_text("**Usage:**\n\n/song or /music [Youtube Url or Music Name]")
+            await message.reply_text("**Usage:**\n\n/song or /music [Youtube Url atau judul musik]")
         query = message.text.split(None, 1)[1]
         mystic = await message.reply_text("**🔄 Searching**")
         try:
@@ -116,7 +116,7 @@ async def mpthree(_, message: Message):
             ID4 = (result[3]["id"])
             ID5 = (result[4]["id"])
         except Exception as e:
-            return await mystic.edit_text(f"Soung Not Found.\n**Possible Reason:**{e}")
+            return await mystic.edit_text(f"Lagu tidak ditemukan.\n**Kemungkinan Alasan:**{e}")
         thumb ="cache/IMG_2.png"
         await mystic.delete()   
         buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
@@ -139,11 +139,11 @@ async def startyuplay(_,CallbackQuery):
     try:
         id,duration,user_id = callback_request.split("|") 
     except Exception as e:
-        return await CallbackQuery.message.edit(f"Error Occured\n**Possible reason could be**:{e}")
+        return await CallbackQuery.message.edit(f"Terjadi Kesalahan\n**Kemungkinan Alasan**:{e}")
     if duration == "None":
-        return await CallbackQuery.message.reply_text(f"Sorry!, Live Videos are not supported")      
+        return await CallbackQuery.message.reply_text(f"Maaf! Video langsung tidak Didukung")      
     if CallbackQuery.from_user.id != int(user_id):
-        return await CallbackQuery.answer("This is not for you! Search You Own Song nigga", show_alert=True)
+        return await CallbackQuery.answer("Ini bukan untukmu! Cari Lagu Anda Sendiri", show_alert=True)
     await CallbackQuery.message.delete()
     checking = f"[{CallbackQuery.from_user.first_name}](tg://user?id={userid})"
     url = (f"https://www.youtube.com/watch?v={id}")
@@ -151,13 +151,13 @@ async def startyuplay(_,CallbackQuery):
     idx = id
     smex = int(time_to_seconds(duration))
     if smex > DURATION_LIMIT:
-        await CallbackQuery.message.reply_text(f"**__Duration Error__**\n\n**Allowed Duration: **90 minute(s)\n**Received Duration:** {duration} minute(s)")
+        await CallbackQuery.message.reply_text(f"**__Kesalahan Durasi__**\n\n**Durasi yang diizinkan: **90 minute(s)\n**Durasi Yang Diterima:** {duration} minute(s)")
         return 
     try:
         with yt_dlp.YoutubeDL(ytdl_opts) as ytdl:
             x = ytdl.extract_info(url, download=False)
     except Exception as e:
-        return await CallbackQuery.message.reply_text(f"Failed to download this video.\n\n**Reason**:{e}") 
+        return await CallbackQuery.message.reply_text(f"Gagal mengunduh video ini.\n\n**Alasan**:{e}") 
     title = (x["title"])
     await CallbackQuery.answer(f"Selected {title[:20]}.... \nProcessing..", show_alert=True)
     thumbnail = (x["thumbnail"])
@@ -185,9 +185,9 @@ async def chonga(_,CallbackQuery):
     try:
         id , query, user_id = callback_request.split("|") 
     except Exception as e:
-        return await CallbackQuery.message.edit(f"Error Occured\n**Possible reason could be**:{e}")       
+        return await CallbackQuery.message.edit(f"Terjadi Kesalahan\n**Kemungkinan Alasan**:{e}")       
     if CallbackQuery.from_user.id != int(user_id):
-        return await CallbackQuery.answer("This is not for you! Search You Own Song", show_alert=True)
+        return await CallbackQuery.answer("Ini bukan untukmu! Cari Lagu Anda Sendiri", show_alert=True)
     i=int(id)
     query = str(query)
     try:
@@ -224,7 +224,7 @@ async def chonga(_,CallbackQuery):
         ID9 = (result[8]["id"])
         ID10 = (result[9]["id"])                    
     except Exception as e:
-        return await mystic.edit_text(f"Soung Not Found.\n**Possible Reason:**{e}")
+        return await mystic.edit_text(f"Lagu tidak ditemukan.\n**Kemungkinan Alasan:**{e}")
     if i == 1:
         buttons = search_markup2(ID6, ID7, ID8, ID9, ID10, duration6, duration7, duration8, duration9, duration10 ,user_id, query)
         await CallbackQuery.edit_message_text(
@@ -290,11 +290,11 @@ def search_markup2(ID6, ID7, ID8, ID9, ID10, duration6, duration7, duration8, du
 def gets(videoid, user_id):
     buttons= [
             [
-                InlineKeyboardButton(text="🧰 Get Audio", callback_data=f'gets audio|{videoid}|{user_id}'),
-                InlineKeyboardButton(text="🧰 Get Video", callback_data=f'gets video|{videoid}|{user_id}')
+                InlineKeyboardButton(text="🎵 ᴜɴᴅᴜʜ ᴀᴜᴅɪᴏ", callback_data=f'gets audio|{videoid}|{user_id}'),
+                InlineKeyboardButton(text="🎥 ᴜɴᴅᴜʜ ᴠɪᴅᴇᴏ", callback_data=f'gets video|{videoid}|{user_id}')
             ],
             [
-                InlineKeyboardButton(text="🗑 Close Menu", callback_data=f'close2')
+                InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data=f'close2')
             ],
         ]
     return buttons
