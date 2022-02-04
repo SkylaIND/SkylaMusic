@@ -52,7 +52,7 @@ def time_to_seconds(time):
 async def mpthree(_, message: Message):
     chat_id = message.chat.id
     if message.sender_chat:
-        return await message.reply_text("You're an __Anonymous Admin__!\nRevert back to User Account From Admin Rights.")  
+        return await message.reply_text("Nonaktifkan izin __Anonymous Admin__!\nAgar bisa play musik.")  
     user_id = message.from_user.id
     chat_title = message.chat.title
     username = message.from_user.first_name
