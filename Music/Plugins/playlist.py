@@ -43,7 +43,7 @@ async def pause_cmd(_, message):
     thumb ="cache/Playlist.png"
     await message.reply_photo(
     photo=thumb, 
-    caption=("**__Music's Playlist Feature__**\n\nSelect The Playlist, You want to check!"),    
+    caption=("**__Music's Playlist Fitur__**\n\nPilih Daftar Putar, Anda ingin memeriksa!"),    
     reply_markup=play_list_keyboard) 
     return 
 
@@ -59,11 +59,11 @@ async def pause_cmd(_, message):
     if name not in options:
         return await message.reply_text(usage)
     if len(message.text) == 18:
-        return await message.reply_text(f"Confirmation!!\nYou sure you want to delete your whole playlist?", reply_markup=confirm_keyboard)
+        return await message.reply_text(f"Konfirmasi!!\nAnda yakin ingin menghapus seluruh daftar putar Anda?", reply_markup=confirm_keyboard)
     else:
          _playlist = await get_note_names(message.from_user.id)
     if not _playlist:
-        await message.reply_text("You have no Playlist on Music's Server")
+        await message.reply_text("Anda tidak memiliki Daftar Putar di Server Musik")
     else:
         titlex = []
         j = 0
@@ -74,17 +74,17 @@ async def pause_cmd(_, message):
             if j == count:
                 deleted = await delete_playlist(message.from_user.id, note)
                 if deleted:
-                    return await message.reply_text(f"**Deleted the {count} music in playlist**")
+                    return await message.reply_text(f"**Dihapus {count} music dari daftar putar**")
                 else:
-                    return await message.reply_text(f"**No such saved music in playlist.**")                                
-        await message.reply_text("You have no such music in Playlist.")                             
+                    return await message.reply_text(f"**Tidak ada musik yang disimpan dalam daftar putar.**")                                
+        await message.reply_text("Anda tidak memiliki musik seperti itu di Daftar Putar.")                             
 
         
 @app.on_message(filters.command("delgroupplaylist"))
 async def delgroupplaylist(_, message):
     a = await app.get_chat_member(message.chat.id , message.from_user.id)
     if not a.can_manage_voice_chats:
-        return await message.reply_text("I don't have the required permission to perform this action.\n**Permission:** __MANAGE VOICE CHATS__")
+        return await message.reply_text("Saya tidak memiliki izin yang diperlukan untuk melakukan tindakan ini.\n**Izin:** __KELOLA OBROLAN SUARA__")
     usage = ("Usage:\n\n/delgroupplaylist [Numbers between 1-30] ( to delete a particular music in playlist )\n\nor\n\n /delgroupplaylist all ( to delete whole playlist )")
     if len(message.command) < 2:
         return await message.reply_text(usage)
@@ -94,7 +94,7 @@ async def delgroupplaylist(_, message):
     if name not in options:
         return await message.reply_text(usage)
     if len(message.text) == 21:
-        return await message.reply_text(f"Confirmation!!\nYou sure you want to delete whole whole playlist?", reply_markup=confirm_group_keyboard)
+        return await message.reply_text(f"Konfirmasi!!\nAnda yakin ingin menghapus seluruh daftar putar?", reply_markup=confirm_group_keyboard)
     else:
          _playlist = await get_note_names(message.chat.id)
     if not _playlist:
@@ -109,7 +109,7 @@ async def delgroupplaylist(_, message):
             if j == count:
                 deleted = await delete_playlist(message.chat.id, note)
                 if deleted:
-                    return await message.reply_text(f"**Deleted the {count} music in group's playlist**")
+                    return await message.reply_text(f"**Dihapus {count} music dari group's playlist**")
                 else:
-                    return await message.reply_text(f"**No such saved music in Group playlist.**")                                
+                    return await message.reply_text(f"**Grup tidak memiliki Daftar Putar di Server Musik.**")                                
         await message.reply_text("You have no such music in Group Playlist.")
